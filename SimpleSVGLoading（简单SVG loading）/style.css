@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+}
+
+svg {
+  width: 110px;
+  height: 110px;
+  position: relative;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+svg > circle {
+  stroke-width: 10px;
+  stroke: aqua;
+  stroke-linecap: round;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 0;
+  fill: none;
+  transform: translate(5px, 5px);
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0%,100% {
+    stroke-dashoffset: 360;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  50.01% {
+    stroke-dashoffset: 720;
+  }
+}
