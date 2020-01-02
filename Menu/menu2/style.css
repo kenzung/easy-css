@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.menu {
+  background: #0a5c7c;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.toggle {
+  background: #063c52;
+  display: none;
+}
+
+.menu > ul {
+  list-style: none;
+  align-items: center;
+  color: #fff;
+  padding: 0 40px;
+}
+
+.menu > ul > li {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.menu > ul > li:hover {
+  background: #bd2c00;
+}
+
+.toggle > button {
+  outline: none;
+  width: 35px;
+  height: 35px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.toggle > button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  height: 25px;
+  width: 25px;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.toggle > button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  height: 3px;
+  width: 25px;
+  background: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .toggle {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .menu > ul {
+    padding: 0;
+    display: none;
+  }
+  
+  .menu > ul > li {
+    display: block;
+    padding: 12px 0;
+    text-align: center;
+    cursor: pointer;
+  }
+  .menu > ul > li:hover {
+    background: #bd2c00;
+  }
+
+  .menu > .active {
+    display: block;
+  }
+}

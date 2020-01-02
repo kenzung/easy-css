@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="menu">
+    <div class="toggle">
+      <button id="btn"></button>
+    </div>
+    <ul id="list" class="active">
+      <li>Home</li>
+      <li>About</li>
+      <li>Service</li>
+      <li>Product</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+  <script>
+    var btn = document.getElementById('btn');
+    var list = document.getElementById('list');
+    function btnClick() {
+      list.classList.toggle('active');
+    }
+    btn.addEventListener('click', btnClick)
+
+    window.onunload = () => {
+      btn.removeEventListener('click', btnClick);
+    }
+  </script>
+</body>
+</html>
